@@ -1,22 +1,67 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="Abonos del Carmen, nutriendo la tierra, cosechando futuro. Abonos orgánicos de la más alta calidad." />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/img/logoAbonosDelCarmen.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<script is:inline>
+			const theme = (() => {
+			  if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+				return localStorage.getItem('theme');
+			  }
+			  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				return 'dark';
+			  }
+			  return 'light';
+			})();
+		  
+			if (theme === 'dark') {
+			  document.documentElement.classList.add('dark');
+			} else {
+			  document.documentElement.classList.remove('dark');
+			}
+		</script>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
-	html,
+<style is:global>
+	:root {
+		--font-serif: 'Lora', serif;
+		--font-sans: 'Montserrat', sans-serif;
+	}
+
+	html {
+		font-family: var(--font-sans);
+		background-color: #FEFAE0;
+		color: #283618;
+	}
+	html.dark {
+		background-color: #283618;
+		color: #FEFAE0;
+	}
 	body {
 		margin: 0;
-		width: 100%;
-		height: 100%;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-serif);
+		font-weight: 700;
 	}
 </style>

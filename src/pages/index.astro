@@ -1,11 +1,118 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Abonos del Carmen - Nutriendo la Tierra">
+	<header class="w-full sticky top-0 left-0 z-20 p-4 flex justify-between items-center bg-background text-primary dark:bg-secondary dark:text-background shadow-md">
+		<div class="flex items-center">
+			<img src="/img/logoAbonosDelCarmen.png" alt="Logo Abonos del Carmen" class="h-12 md:h-16 mr-3">
+			<span class="text-xl md:text-2xl font-semibold" style="font-family: var(--font-sans);">Abonos del Carmen</span>
+		</div>
+		<nav class="hidden md:flex gap-4 items-center">
+			<a href="#nosotros" class="hover:underline">Nosotros</a>
+			<a href="#productos" class="hover:underline">Productos</a>
+			<a href="#contacto" class="bg-accent text-primary px-4 py-2 rounded-full hover:bg-opacity-80">Contacto</a>
+			<ThemeToggle />
+		</nav>
+	</header>
+
+	<main class="bg-background dark:bg-primary">
+		<section class="relative h-[calc(100vh-104px)] flex items-center justify-center text-center text-background">
+			<div class="absolute top-0 left-0 w-full h-full bg-primary opacity-40 dark:opacity-70"></div>
+			<img src="/img/Background.png" alt="Campo fértil" class="w-full h-full object-cover">
+			<div class="relative z-5">
+				<h1 class="text-5xl md:text-7xl font-bold mb-4">Nutriendo la tierra, cosechando futuro</h1>
+				<p class="text-lg md:text-xl max-w-2xl mx-auto">Abonos orgánicos de la más alta calidad para devolverle a la tierra lo que nos da.</p>
+			</div>
+		</section>
+
+		<section id="nosotros" class="py-20 px-4 md:px-8">
+			<div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+				<div>
+					<img src="/img/30bf6f2f-1677-42f7-a654-8045a8f59ebf.jpg" alt="Nuestro equipo" class="rounded-lg shadow-lg w-full h-auto">
+				</div>
+				<div class="text-center md:text-left">
+					<h2 class="text-4xl md:text-5xl font-bold text-primary dark:text-background mb-6">Nuestra Pasión es el Campo</h2>
+					<p class="text-secondary dark:text-light-accent text-lg mb-4">
+						En Abonos del Carmen, somos una empresa familiar dedicada a la producción de abonos 100% orgánicos. Creemos en una agricultura sostenible y en el poder de la naturaleza para regenerar nuestros suelos.
+					</p>
+					<p class="text-secondary dark:text-light-accent text-lg">
+						Nuestro compromiso es ofrecerte productos de la más alta calidad, elaborados con procesos cuidadosos que respetan el medio ambiente y garantizan los mejores nutrientes para tus cultivos.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="productos" class="py-20 px-4 md:px-8 bg-light-accent bg-opacity-20 dark:bg-primary">
+			<div class="container mx-auto">
+				<h2 class="text-4xl md:text-5xl font-bold text-primary dark:text-background text-center mb-12">Nuestros Productos Estrella</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="bg-background dark:bg-secondary rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+						<img src="/img/compost-bedded-pack-dairy-cows_CCSAW.jpeg" alt="Composta Premium" class="h-64 w-full object-cover">
+						<div class="p-6 text-center">
+							<h3 class="text-2xl font-bold text-secondary dark:text-light-accent mb-2">Composta Premium</h3>
+							<p class="text-primary dark:text-background mb-4">El alimento perfecto para tu jardín. Enriquece la tierra y mejora la retención de agua.</p>
+							<a href="#contacto" class="text-accent dark:text-background font-semibold hover:underline">Solicitar información</a>
+						</div>
+					</div>
+					<div class="bg-background dark:bg-secondary rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+						<img src="/img/Abono vacas.png" alt="Abono de estiércol" class="h-64 w-full object-cover">
+						<div class="p-6 text-center">
+							<h3 class="text-2xl font-bold text-secondary dark:text-light-accent mb-2">Abono de Estiércol</h3>
+							<p class="text-primary dark:text-background mb-4">Concentrado de nutrientes de origen 100% natural para un crecimiento explosivo.</p>
+							<a href="#contacto" class="text-accent dark:text-background font-semibold hover:underline">Solicitar información</a>
+						</div>
+					</div>
+					<div class="bg-background dark:bg-secondary rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+						<img src="/img/shutterstock_586787390.jpg" alt="Sustrato preparado" class="h-64 w-full object-cover">
+						<div class="p-6 text-center">
+							<h3 class="text-2xl font-bold text-secondary dark:text-light-accent mb-2">Sustrato Preparado</h3>
+							<p class="text-primary dark:text-background mb-4">La base ideal para tus almácigos y macetas. Aireado, ligero y lleno de vida.</p>
+							<a href="#contacto" class="text-accent dark:text-background font-semibold hover:underline">Solicitar información</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer id="contacto" class="bg-primary dark:bg-black text-background py-16 px-4 md:px-8">
+			<div class="container mx-auto">
+				<div class="text-center">
+					<h2 class="text-4xl font-bold mb-4">Ponte en Contacto</h2>
+					<p class="text-light-accent text-lg max-w-xl mx-auto mb-10">
+						¿Listo para darle a tus cultivos el impulso que necesitan? Contáctanos para pedidos, consultas o simplemente para charlar sobre tierra fértil.
+					</p>
+				</div>
+
+				<div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-center">
+					<div>
+						<p class="font-semibold text-accent text-lg hover:underline">abonosdelcarmen@email.com</p>
+					</div>
+					<div>
+						<a href="https://wa.me/521234567890" target="_blank" rel="noopener noreferrer" class="font-semibold text-accent text-lg hover:underline">
+							+52 123 456 7890
+						</a>
+					</div>
+					<div class="flex justify-center gap-6">
+						<a href="#" aria-label="Facebook" class="text-light-accent hover:text-accent transition-colors">
+							<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"></path></svg>
+						</a>
+						<a href="#" aria-label="Instagram" class="text-light-accent hover:text-accent transition-colors">
+							<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.359 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.359-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.359-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"></path></svg>
+						</a>
+						<a href="https://wa.me/521234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="text-light-accent hover:text-accent transition-colors">
+							<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.096 4.904c-1.89-1.89-4.393-2.904-7.096-2.904s-5.206 1.014-7.096 2.904c-1.89 1.89-2.904 4.393-2.904 7.096s1.014 5.206 2.904 7.096c1.89 1.89 4.393 2.904 7.096 2.904s5.206-1.014 7.096-2.904c1.89-1.89 2.904-4.393 2.904-7.096s-1.014-5.206-2.904-7.096zm-7.096 15.42c-4.636 0-8.42-3.784-8.42-8.42s3.784-8.42 8.42-8.42 8.42 3.784 8.42 8.42-3.784 8.42-8.42 8.42zm4.316-5.467c-.234-.117-1.385-.684-1.6-.762-.215-.078-.37-.117-.525.117-.155.234-.606.762-.743.917-.137.155-.274.175-.508.058-.234-.117-.99-.364-1.885-1.163-.697-.618-1.16-1.378-1.296-1.612-.137-.234-.015-.364.102-.48.106-.107.234-.274.35-.41.117-.137.155-.234.234-.39.078-.155.038-.293-.02-.41-.058-.117-.525-1.266-.72-1.734-.184-.447-.38-.38-.525-.386-.136-.005-.292-.005-.447-.005s-.386.058-.594.292c-.208.234-.817.8-.817 1.95 0 1.15.836 2.263.953 2.42.117.155 1.644 2.51 4.004 3.515.58.242 1.04.387 1.406.495.537.164 1.065.145 1.464.086.457-.068 1.385-.563 1.58-1.107.195-.544.195-1.012.137-1.107-.058-.095-.214-.155-.447-.272z"></path></svg>
+						</a>
+					</div>
+				</div>
+
+				<p class="text-light-accent text-center mt-12">&copy; 2024 Abonos del Carmen. Creado con ❤️ para la tierra.</p>
+			</div>
+		</footer>
+
+	</main>
 </Layout>
